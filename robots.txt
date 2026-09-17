@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://pabdulrehman055-lgtm.github.io/rehman-digital/sitemap.xml

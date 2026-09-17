@@ -1,0 +1,2108 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Rehman Digital creates modern, responsive and professional websites for businesses, startups and individuals.">
+    <meta name="author" content="Rehman Digital">
+
+    <title>Rehman Digital | Professional Web Design</title>
+
+    <style>
+
+        /* =====================================================
+           GLOBAL
+        ===================================================== */
+
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --dark: #0f172a;
+            --dark-2: #1e293b;
+            --text: #1e293b;
+            --muted: #64748b;
+            --light: #f8fafc;
+            --white: #ffffff;
+            --border: #e2e8f0;
+            --card: #ffffff;
+            --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+            --radius: 16px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 90px;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--light);
+            color: var(--text);
+            line-height: 1.6;
+            transition: 0.3s;
+        }
+
+        body.dark {
+            --light: #0f172a;
+            --white: #1e293b;
+            --text: #f8fafc;
+            --muted: #cbd5e1;
+            --border: #334155;
+            --card: #1e293b;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1150px;
+            margin: auto;
+        }
+
+        .section {
+            padding: 100px 0;
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 55px;
+        }
+
+        .section-heading span {
+            color: var(--primary);
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 13px;
+        }
+
+        .section-heading h2 {
+            font-size: 40px;
+            margin: 10px 0 15px;
+        }
+
+        .section-heading p {
+            color: var(--muted);
+            max-width: 650px;
+            margin: auto;
+        }
+
+        /* =====================================================
+           HEADER
+        ===================================================== */
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(15, 23, 42, 0.94);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .navbar {
+            min-height: 75px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #60a5fa;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        nav a {
+            color: #e2e8f0;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #60a5fa;
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .theme-btn,
+        .menu-btn {
+            border: none;
+            background: transparent;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .menu-btn {
+            display: none;
+        }
+
+        /* =====================================================
+           BUTTONS
+        ===================================================== */
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 13px 23px;
+            border-radius: 8px;
+            border: 2px solid var(--primary);
+            background: var(--primary);
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: var(--primary-dark);
+            border-color: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            color: white;
+        }
+
+        /* =====================================================
+           HERO
+        ===================================================== */
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background:
+                radial-gradient(circle at 80% 20%, rgba(37,99,235,0.16), transparent 30%),
+                radial-gradient(circle at 20% 80%, rgba(96,165,250,0.12), transparent 25%),
+                var(--light);
+            padding-top: 75px;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-content .badge {
+            display: inline-block;
+            background: rgba(37,99,235,0.1);
+            color: var(--primary);
+            padding: 8px 14px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(42px, 6vw, 70px);
+            line-height: 1.08;
+            margin-bottom: 22px;
+        }
+
+        .hero h1 span {
+            color: var(--primary);
+        }
+
+        .hero-description {
+            color: var(--muted);
+            font-size: 18px;
+            max-width: 650px;
+            margin-bottom: 30px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .hero-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 25px;
+            padding: 35px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            animation: floating 4s ease-in-out infinite;
+        }
+
+        .hero-icon {
+            width: 130px;
+            height: 130px;
+            border-radius: 30px;
+            margin: auto auto 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(37,99,235,0.1);
+            font-size: 65px;
+        }
+
+        .hero-card h3 {
+            margin-bottom: 10px;
+        }
+
+        .hero-card p {
+            color: var(--muted);
+        }
+
+        @keyframes floating {
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-12px);
+            }
+        }
+
+        /* =====================================================
+           STATS
+        ===================================================== */
+
+        .stats {
+            background: var(--dark);
+            color: white;
+            padding: 35px 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            text-align: center;
+        }
+
+        .stat {
+            padding: 10px;
+        }
+
+        .stat h3 {
+            font-size: 32px;
+            color: #60a5fa;
+        }
+
+        .stat p {
+            color: #cbd5e1;
+            font-size: 14px;
+        }
+
+        /* =====================================================
+           SERVICES
+        ===================================================== */
+
+        .services {
+            background: var(--light);
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .service-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            padding: 35px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            transition: 0.35s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary);
+        }
+
+        .service-icon {
+            width: 55px;
+            height: 55px;
+            border-radius: 12px;
+            background: rgba(37,99,235,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            margin-bottom: 12px;
+        }
+
+        .service-card p {
+            color: var(--muted);
+        }
+
+        /* =====================================================
+           ABOUT
+        ===================================================== */
+
+        .about {
+            background: var(--white);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-box {
+            background: var(--dark);
+            color: white;
+            padding: 45px;
+            border-radius: 25px;
+            text-align: center;
+        }
+
+        .about-box .big-icon {
+            font-size: 75px;
+            margin-bottom: 15px;
+        }
+
+        .about-content h2 {
+            font-size: 38px;
+            margin-bottom: 20px;
+        }
+
+        .about-content p {
+            color: var(--muted);
+            margin-bottom: 15px;
+        }
+
+        .check-list {
+            list-style: none;
+            margin: 25px 0;
+        }
+
+        .check-list li {
+            margin-bottom: 12px;
+        }
+
+        .check-list li::before {
+            content: "✓";
+            color: var(--primary);
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        /* =====================================================
+           SKILLS
+        ===================================================== */
+
+        .skills {
+            background: var(--light);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .skill {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 25px;
+            text-align: center;
+        }
+
+        .skill-icon {
+            font-size: 35px;
+            margin-bottom: 10px;
+        }
+
+        .skill p {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        /* =====================================================
+           PROJECTS
+        ===================================================== */
+
+        .projects {
+            background: var(--white);
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .project-card {
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            overflow: hidden;
+            background: var(--card);
+            box-shadow: var(--shadow);
+            transition: 0.35s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .project-image {
+            height: 190px;
+            background:
+                linear-gradient(135deg, #1d4ed8, #60a5fa);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 55px;
+        }
+
+        .project-info {
+            padding: 25px;
+        }
+
+        .project-info h3 {
+            margin-bottom: 10px;
+        }
+
+        .project-info p {
+            color: var(--muted);
+            margin-bottom: 18px;
+        }
+
+        /* =====================================================
+           PROCESS
+        ===================================================== */
+
+        .process {
+            background: var(--light);
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .process-card {
+            text-align: center;
+            padding: 25px;
+        }
+
+        .process-number {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: auto auto 18px;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .process-card p {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        /* =====================================================
+           TESTIMONIALS
+        ===================================================== */
+
+        .testimonials {
+            background: var(--white);
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .testimonial {
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 30px;
+            background: var(--card);
+        }
+
+        .stars {
+            color: #f59e0b;
+            margin-bottom: 15px;
+        }
+
+        .testimonial p {
+            color: var(--muted);
+            margin-bottom: 20px;
+        }
+
+        .client {
+            font-weight: bold;
+        }
+
+        /* =====================================================
+           CTA
+        ===================================================== */
+
+        .cta {
+            padding: 80px 0;
+            background: var(--dark);
+            color: white;
+            text-align: center;
+        }
+
+        .cta h2 {
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        .cta p {
+            color: #cbd5e1;
+            max-width: 650px;
+            margin: 0 auto 25px;
+        }
+
+        /* =====================================================
+           CONTACT
+        ===================================================== */
+
+        .contact {
+            background: var(--light);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 40px;
+        }
+
+        .contact-info {
+            background: var(--dark);
+            color: white;
+            padding: 40px;
+            border-radius: 20px;
+        }
+
+        .contact-info h3 {
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        .contact-info p {
+            color: #cbd5e1;
+            margin-bottom: 25px;
+        }
+
+        .contact-item {
+            margin-bottom: 18px;
+        }
+
+        .contact-item strong {
+            display: block;
+            margin-bottom: 3px;
+        }
+
+        .contact-item span {
+            color: #cbd5e1;
+        }
+
+        .contact-form {
+            background: var(--card);
+            border: 1px solid var(--border);
+            padding: 35px;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 7px;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            background: var(--light);
+            color: var(--text);
+            font-family: inherit;
+            font-size: 15px;
+        }
+
+        .form-group textarea {
+            min-height: 140px;
+            resize: vertical;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        footer {
+            background: #020617;
+            color: white;
+            padding: 50px 0 25px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        footer h3 {
+            margin-bottom: 15px;
+        }
+
+        footer p,
+        footer a {
+            color: #94a3b8;
+        }
+
+        footer a:hover {
+            color: white;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .copyright {
+            border-top: 1px solid #1e293b;
+            padding-top: 20px;
+            text-align: center;
+            color: #64748b;
+            font-size: 14px;
+        }
+
+        /* =====================================================
+           BACK TO TOP
+        ===================================================== */
+
+        #topButton {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            width: 45px;
+            height: 45px;
+            border: none;
+            border-radius: 50%;
+            background: var(--primary);
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            display: none;
+            z-index: 999;
+        }
+
+        /* =====================================================
+           SCROLL ANIMATION
+        ===================================================== */
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: 0.7s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* =====================================================
+           TABLET
+        ===================================================== */
+
+        @media (max-width: 900px) {
+
+            .hero-grid,
+            .about-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-card {
+                max-width: 500px;
+                margin: auto;
+            }
+
+            .cards-grid,
+            .project-grid,
+            .testimonial-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .process-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                row-gap: 25px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        /* =====================================================
+           MOBILE
+        ===================================================== */
+
+        @media (max-width: 650px) {
+
+            .container {
+                width: 92%;
+            }
+
+            .section {
+                padding: 70px 0;
+            }
+
+            .section-heading h2 {
+                font-size: 30px;
+            }
+
+            .menu-btn {
+                display: block;
+            }
+
+            nav {
+                position: absolute;
+                top: 75px;
+                left: 0;
+                width: 100%;
+                background: #0f172a;
+                display: none;
+                flex-direction: column;
+                padding: 20px;
+                text-align: center;
+            }
+
+            nav.active {
+                display: flex;
+            }
+
+            .hero {
+                min-height: auto;
+                padding-top: 130px;
+                padding-bottom: 70px;
+            }
+
+            .hero h1 {
+                font-size: 43px;
+            }
+
+            .hero-description {
+                font-size: 16px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .hero-buttons .btn {
+                width: 100%;
+            }
+
+            .cards-grid,
+            .project-grid,
+            .testimonial-grid,
+            .skills-grid,
+            .process-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta h2 {
+                font-size: 31px;
+            }
+
+            .about-content h2 {
+                font-size: 30px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header>
+
+    <div class="container navbar">
+
+        <a href="#home" class="logo">
+            Rehman<span>Digital</span>
+        </a>
+
+        <nav id="mainNav">
+
+            <a href="#home">Home</a>
+            <a href="#services">Services</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#process">Process</a>
+            <a href="#contact">Contact</a>
+
+        </nav>
+
+        <div class="nav-actions">
+
+            <button
+                class="theme-btn"
+                onclick="toggleTheme()"
+                aria-label="Toggle dark mode"
+                id="themeButton">
+                🌙
+            </button>
+
+            <button
+                class="menu-btn"
+                onclick="toggleMenu()"
+                aria-label="Open menu">
+                ☰
+            </button>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero" id="home">
+
+    <div class="container hero-grid">
+
+        <div class="hero-content reveal">
+
+            <div class="badge">
+                Available for Website Projects
+            </div>
+
+            <h1>
+                Modern Websites
+                <span>That Grow Businesses.</span>
+            </h1>
+
+            <p class="hero-description">
+                I create clean, responsive and professional websites
+                for businesses, startups and individuals using modern
+                web technologies.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#projects" class="btn">
+                    View My Work →
+                </a>
+
+                <a href="#contact" class="btn btn-outline">
+                    Let's Talk
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="hero-card reveal">
+
+            <div class="hero-icon">
+                💻
+            </div>
+
+            <h3>
+                Web Design & Development
+            </h3>
+
+            <p>
+                HTML • CSS • JavaScript
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     STATS
+===================================================== -->
+
+<section class="stats">
+
+    <div class="container stats-grid">
+
+        <div class="stat">
+            <h3>100%</h3>
+            <p>Responsive Design</p>
+        </div>
+
+        <div class="stat">
+            <h3>24/7</h3>
+            <p>Online Availability</p>
+        </div>
+
+        <div class="stat">
+            <h3>3+</h3>
+            <p>Demo Projects</p>
+        </div>
+
+        <div class="stat">
+            <h3>100%</h3>
+            <p>Client Focused</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     SERVICES
+===================================================== -->
+
+<section class="section services" id="services">
+
+    <div class="container">
+
+        <div class="section-heading reveal">
+
+            <span>What I Do</span>
+
+            <h2>Professional Web Services</h2>
+
+            <p>
+                Simple and practical website solutions for businesses
+                and individuals.
+            </p>
+
+        </div>
+
+
+        <div class="cards-grid">
+
+            <div class="service-card reveal">
+
+                <div class="service-icon">
+                    💻
+                </div>
+
+                <h3>Business Websites</h3>
+
+                <p>
+                    Professional websites that help businesses
+                    establish a strong online presence.
+                </p>
+
+            </div>
+
+
+            <div class="service-card reveal">
+
+                <div class="service-icon">
+                    🚀
+                </div>
+
+                <h3>Landing Pages</h3>
+
+                <p>
+                    Modern landing pages designed to clearly
+                    present products, services and offers.
+                </p>
+
+            </div>
+
+
+            <div class="service-card reveal">
+
+                <div class="service-icon">
+                    📱
+                </div>
+
+                <h3>Responsive Design</h3>
+
+                <p>
+                    Websites designed to work smoothly across
+                    mobile phones, tablets and computers.
+                </p>
+
+            </div>
+
+
+            <div class="service-card reveal">
+
+                <div class="service-icon">
+                    🔧
+                </div>
+
+                <h3>Website Fixes</h3>
+
+                <p>
+                    Basic HTML, CSS and JavaScript fixes,
+                    improvements and updates.
+                </p>
+
+            </div>
+
+
+            <div class="service-card reveal">
+
+                <div class="service-icon">
+                    ⚡
+                </div>
+
+                <h3>Performance</h3>
+
+                <p>
+                    Clean layouts and lightweight code focused
+                    on a smooth browsing experience.
+                </p>
+
+            </div>
+
+
+            <div class="service-card reveal">
+
+                <div class="service-icon">
+                    🎨
+                </div>
+
+                <h3>Modern UI</h3>
+
+                <p>
+                    Clean interfaces with professional layouts
+                    and easy navigation.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     ABOUT
+===================================================== -->
+
+<section class="section about" id="about">
+
+    <div class="container about-grid">
+
+        <div class="about-box reveal">
+
+            <div class="big-icon">
+                👨‍💻
+            </div>
+
+            <h3>
+                Rehman Digital
+            </h3>
+
+            <p>
+                Web Design & Development
+            </p>
+
+        </div>
+
+
+        <div class="about-content reveal">
+
+            <div class="section-heading" style="text-align:left; margin-bottom:20px;">
+
+                <span>About Me</span>
+
+                <h2>
+                    Building Websites With Purpose
+                </h2>
+
+            </div>
+
+            <p>
+                Rehman Digital focuses on creating simple,
+                professional and user-friendly websites.
+            </p>
+
+            <p>
+                Every project is designed to be responsive,
+                easy to navigate and suitable for modern devices.
+            </p>
+
+
+            <ul class="check-list">
+
+                <li>Mobile-friendly websites</li>
+                <li>Clean HTML, CSS and JavaScript</li>
+                <li>Modern user interface</li>
+                <li>Simple and clear navigation</li>
+
+            </ul>
+
+
+            <a href="#contact" class="btn">
+                Start a Project
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     SKILLS
+===================================================== -->
+
+<section class="section skills" id="skills">
+
+    <div class="container">
+
+        <div class="section-heading reveal">
+
+            <span>My Skills</span>
+
+            <h2>Technologies I Use</h2>
+
+            <p>
+                The core technologies used to build modern websites.
+            </p>
+
+        </div>
+
+
+        <div class="skills-grid">
+
+            <div class="skill reveal">
+
+                <div class="skill-icon">
+                    🌐
+                </div>
+
+                <h3>HTML</h3>
+
+                <p>
+                    Website structure and semantic markup.
+                </p>
+
+            </div>
+
+
+            <div class="skill reveal">
+
+                <div class="skill-icon">
+                    🎨
+                </div>
+
+                <h3>CSS</h3>
+
+                <p>
+                    Responsive layouts and visual design.
+                </p>
+
+            </div>
+
+
+            <div class="skill reveal">
+
+                <div class="skill-icon">
+                    ⚡
+                </div>
+
+                <h3>JavaScript</h3>
+
+                <p>
+                    Interactive website functionality.
+                </p>
+
+            </div>
+
+
+            <div class="skill reveal">
+
+                <div class="skill-icon">
+                    📱
+                </div>
+
+                <h3>Responsive Design</h3>
+
+                <p>
+                    Mobile, tablet and desktop layouts.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     PROJECTS
+===================================================== -->
+
+<section class="section projects" id="projects">
+
+    <div class="container">
+
+        <div class="section-heading reveal">
+
+            <span>Portfolio</span>
+
+            <h2>Featured Projects</h2>
+
+            <p>
+                Example projects that demonstrate website design
+                and development skills.
+            </p>
+
+        </div>
+
+
+        <div class="project-grid">
+
+            <div class="project-card reveal">
+
+                <div class="project-image">
+                    📚
+                </div>
+
+                <div class="project-info">
+
+                    <h3>StudyHub</h3>
+
+                    <p>
+                        Educational website containing study notes,
+                        chapters and MCQs.
+                    </p>
+
+                    <a href="#" class="btn">
+                        View Project →
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="project-card reveal">
+
+                <div class="project-image">
+                    🏢
+                </div>
+
+                <div class="project-info">
+
+                    <h3>Business Website</h3>
+
+                    <p>
+                        Professional business website with services,
+                        about and contact sections.
+                    </p>
+
+                    <a href="#home" class="btn">
+                        View Demo →
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="project-card reveal">
+
+                <div class="project-image">
+                    🚀
+                </div>
+
+                <div class="project-info">
+
+                    <h3>Landing Page</h3>
+
+                    <p>
+                        Modern landing page for a product or
+                        online service.
+                    </p>
+
+                    <a href="#home" class="btn">
+                        View Demo →
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     PROCESS
+===================================================== -->
+
+<section class="section process" id="process">
+
+    <div class="container">
+
+        <div class="section-heading reveal">
+
+            <span>How It Works</span>
+
+            <h2>My Simple Process</h2>
+
+            <p>
+                A straightforward process from idea to website.
+            </p>
+
+        </div>
+
+
+        <div class="process-grid">
+
+            <div class="process-card reveal">
+
+                <div class="process-number">
+                    01
+                </div>
+
+                <h3>Discuss</h3>
+
+                <p>
+                    Understand the client's requirements
+                    and project goals.
+                </p>
+
+            </div>
+
+
+            <div class="process-card reveal">
+
+                <div class="process-number">
+                    02
+                </div>
+
+                <h3>Design</h3>
+
+                <p>
+                    Create a clean layout and structure
+                    for the website.
+                </p>
+
+            </div>
+
+
+            <div class="process-card reveal">
+
+                <div class="process-number">
+                    03
+                </div>
+
+                <h3>Develop</h3>
+
+                <p>
+                    Build the website using HTML, CSS
+                    and JavaScript.
+                </p>
+
+            </div>
+
+
+            <div class="process-card reveal">
+
+                <div class="process-number">
+                    04
+                </div>
+
+                <h3>Deliver</h3>
+
+                <p>
+                    Test the website and prepare it
+                    for the client.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     TESTIMONIALS
+===================================================== -->
+
+<section class="section testimonials">
+
+    <div class="container">
+
+        <div class="section-heading reveal">
+
+            <span>Testimonials</span>
+
+            <h2>What Clients Could Say</h2>
+
+            <p>
+                Sample testimonial layout for your future portfolio.
+            </p>
+
+        </div>
+
+
+        <div class="testimonial-grid">
+
+            <div class="testimonial reveal">
+
+                <div class="stars">
+                    ★★★★★
+                </div>
+
+                <p>
+                    "The website design was clean and easy
+                    to navigate. The mobile version worked
+                    very well."
+                </p>
+
+                <div class="client">
+                    — Demo Client
+                </div>
+
+            </div>
+
+
+            <div class="testimonial reveal">
+
+                <div class="stars">
+                    ★★★★★
+                </div>
+
+                <p>
+                    "The project was organized clearly and
+                    the website looked professional."
+                </p>
+
+                <div class="client">
+                    — Demo Client
+                </div>
+
+            </div>
+
+
+            <div class="testimonial reveal">
+
+                <div class="stars">
+                    ★★★★★
+                </div>
+
+                <p>
+                    "Good communication and a simple,
+                    responsive website."
+                </p>
+
+                <div class="client">
+                    — Demo Client
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     CTA
+===================================================== -->
+
+<section class="cta">
+
+    <div class="container reveal">
+
+        <h2>
+            Have a Website Idea?
+        </h2>
+
+        <p>
+            Let's turn your idea into a clean and professional
+            website.
+        </p>
+
+        <a href="#contact" class="btn">
+            Start Your Project →
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     CONTACT
+===================================================== -->
+
+<section class="section contact" id="contact">
+
+    <div class="container">
+
+        <div class="section-heading reveal">
+
+            <span>Get In Touch</span>
+
+            <h2>Let's Work Together</h2>
+
+            <p>
+                Have a project or website idea? Send a message.
+            </p>
+
+        </div>
+
+
+        <div class="contact-grid">
+
+            <div class="contact-info reveal">
+
+                <h3>
+                    Contact Information
+                </h3>
+
+                <p>
+                    You can contact Rehman Digital about
+                    website projects and digital services.
+                </p>
+
+
+                <div class="contact-item">
+
+                    <strong>WhatsApp</strong>
+
+                    <span>
+                        +92 319 1114475
+                    </span>
+
+                </div>
+
+
+                <div class="contact-item">
+
+                    <strong>Service</strong>
+
+                    <span>
+                        Website Design & Development
+                    </span>
+
+                </div>
+
+
+                <div class="contact-item">
+
+                    <strong>Availability</strong>
+
+                    <span>
+                        Available for new projects
+                    </span>
+
+                </div>
+
+
+                <br>
+
+                <a
+                    href="https://wa.me/923191114475"
+                    target="_blank"
+                    rel="noopener"
+                    class="btn">
+
+                    WhatsApp Me
+
+                </a>
+
+            </div>
+
+
+            <div class="contact-form reveal">
+
+                <form onsubmit="sendMessage(event)">
+
+                    <div class="form-group">
+
+                        <label for="name">
+                            Your Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="name"
+                            placeholder="Enter your name"
+                            required>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="email">
+                            Your Email
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="Enter your email"
+                            required>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="service">
+                            What do you need?
+                        </label>
+
+                        <select id="service" required>
+
+                            <option value="">
+                                Select a service
+                            </option>
+
+                            <option value="Business Website">
+                                Business Website
+                            </option>
+
+                            <option value="Landing Page">
+                                Landing Page
+                            </option>
+
+                            <option value="Website Fix">
+                                Website Fix
+                            </option>
+
+                            <option value="Other">
+                                Other
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="message">
+                            Project Details
+                        </label>
+
+                        <textarea
+                            id="message"
+                            placeholder="Tell me about your project..."
+                            required></textarea>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="btn"
+                        style="width:100%;">
+
+                        Send Message
+
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    <div class="container">
+
+        <div class="footer-grid">
+
+            <div>
+
+                <h3>
+                    Rehman Digital
+                </h3>
+
+                <p>
+                    Modern websites for businesses,
+                    startups and individuals.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h3>
+                    Quick Links
+                </h3>
+
+                <div class="footer-links">
+
+                    <a href="#home">Home</a>
+                    <a href="#services">Services</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#contact">Contact</a>
+
+                </div>
+
+            </div>
+
+
+            <div>
+
+                <h3>
+                    Services
+                </h3>
+
+                <div class="footer-links">
+
+                    <a href="#services">Business Websites</a>
+                    <a href="#services">Landing Pages</a>
+                    <a href="#services">Responsive Design</a>
+                    <a href="#services">Website Fixes</a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="copyright">
+
+            © 2026 Rehman Digital. All Rights Reserved.
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- BACK TO TOP -->
+
+<button
+    id="topButton"
+    onclick="goToTop()"
+    aria-label="Back to top">
+
+    ↑
+
+</button>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+    /* =========================
+       MOBILE MENU
+    ========================= */
+
+    function toggleMenu() {
+
+        const nav =
+            document.getElementById("mainNav");
+
+        nav.classList.toggle("active");
+
+    }
+
+
+    /* Close mobile menu after clicking */
+
+    document.querySelectorAll("#mainNav a")
+        .forEach(function(link) {
+
+            link.addEventListener("click", function() {
+
+                document
+                    .getElementById("mainNav")
+                    .classList.remove("active");
+
+            });
+
+        });
+
+
+    /* =========================
+       DARK MODE
+    ========================= */
+
+    function toggleTheme() {
+
+        document.body.classList.toggle("dark");
+
+        const button =
+            document.getElementById("themeButton");
+
+        if (document.body.classList.contains("dark")) {
+
+            button.textContent = "☀️";
+
+            localStorage.setItem("theme", "dark");
+
+        } else {
+
+            button.textContent = "🌙";
+
+            localStorage.setItem("theme", "light");
+
+        }
+
+    }
+
+
+    /* Remember theme */
+
+    if (localStorage.getItem("theme") === "dark") {
+
+        document.body.classList.add("dark");
+
+        document.getElementById("themeButton")
+            .textContent = "☀️";
+
+    }
+
+
+    /* =========================
+       CONTACT FORM
+    ========================= */
+
+    function sendMessage(event) {
+
+        event.preventDefault();
+
+        const name =
+            document.getElementById("name").value.trim();
+
+        const email =
+            document.getElementById("email").value.trim();
+
+        const service =
+            document.getElementById("service").value;
+
+        const message =
+            document.getElementById("message").value.trim();
+
+
+        if (!name || !email || !service || !message) {
+
+            alert("Please complete all fields.");
+
+            return;
+
+        }
+
+
+        alert(
+            "Thank you, " +
+            name +
+            "!\n\n" +
+            "Your project request has been received."
+        );
+
+
+        event.target.reset();
+
+    }
+
+
+    /* =========================
+       BACK TO TOP
+    ========================= */
+
+    const topButton =
+        document.getElementById("topButton");
+
+
+    window.addEventListener("scroll", function() {
+
+        if (window.scrollY > 500) {
+
+            topButton.style.display = "block";
+
+        } else {
+
+            topButton.style.display = "none";
+
+        }
+
+    });
+
+
+    function goToTop() {
+
+        window.scrollTo({
+
+            top: 0,
+
+            behavior: "smooth"
+
+        });
+
+    }
+
+
+    /* =========================
+       SCROLL REVEAL
+    ========================= */
+
+    const revealElements =
+        document.querySelectorAll(".reveal");
+
+
+    function revealOnScroll() {
+
+        revealElements.forEach(function(element) {
+
+            const windowHeight =
+                window.innerHeight;
+
+            const elementTop =
+                element.getBoundingClientRect().top;
+
+            if (elementTop < windowHeight - 80) {
+
+                element.classList.add("active");
+
+            }
+
+        });
+
+    }
+
+
+    window.addEventListener(
+        "scroll",
+        revealOnScroll
+    );
+
+
+    revealOnScroll();
+
+
+</script>
+
+</body>
+</html>
+```
